@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import CenteredLayout from '@/layouts/CenteredLayout.vue'
+import NoLayout from '@/layouts/NoLayout.vue'
 import HomePage from '@/pages/HomePage.vue'
 import GroupListPage from '@/pages/groups/GroupListPage.vue'
 import GroupCreationPage from '@/pages/groups/GroupCreationPage.vue'
@@ -23,7 +23,7 @@ const routes = [
   },
   { 
     path: '/sign-in',
-    component: CenteredLayout,
+    component: NoLayout,
     children: [
       {
         path: '',
@@ -33,7 +33,7 @@ const routes = [
   },
   { 
     path: '/sign-up',
-    component: CenteredLayout,
+    component: NoLayout,
     children: [
       {
         path: '',
