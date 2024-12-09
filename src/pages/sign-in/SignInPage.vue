@@ -1,36 +1,55 @@
 <template>
     <div class="w-full h-screen flex flex-col items-center justify-center">
-
         <Card class="w-[500px]">
             <CardHeader>
                 <CardTitle>Welcome!</CardTitle>
+
                 <CardDescription>Please, sign in if you already have an account</CardDescription>
             </CardHeader>
 
             <CardContent>
-                <form @submit="onSubmit" class="flex flex-col gap-y-8">
-                    <FormField v-slot="{ componentField }" name="email">
+                <form
+                    class="flex flex-col gap-y-8"
+                    @submit="onSubmit"
+                >
+                    <FormField
+                        v-slot="{ componentField }"
+                        name="email"
+                    >
                         <FormItem>
                             <FormLabel>Email</FormLabel>
 
                             <FormControl>
-                                <Input type="text" placeholder="your.email@example.com" v-bind="componentField" />
+                                <Input
+                                    type="text"
+                                    placeholder="your.email@example.com"
+                                    v-bind="componentField"
+                                />
                             </FormControl>
 
                             <FormMessage />
                         </FormItem>
                     </FormField>
 
-                    <FormField v-slot="{ componentField }" name="password">
+                    <FormField
+                        v-slot="{ componentField }"
+                        name="password"
+                    >
                         <FormItem>
                             <FormLabel>Password</FormLabel>
 
                             <FormControl>
-                                <Input type="text" v-bind="componentField" />
+                                <Input
+                                    type="text"
+                                    v-bind="componentField"
+                                />
                             </FormControl>
 
                             <RouterLink to="/sign-in/email-confirmation">
-                                <Button variant="link" class="px-0">
+                                <Button
+                                    variant="link"
+                                    class="px-0"
+                                >
                                     I forgot my password
                                 </Button>
                             </RouterLink>
@@ -48,7 +67,10 @@
                     </Button>
                 </RouterLink>
 
-                <Separator label="Or"  class="my-8"/>
+                <Separator
+                    label="Or"
+                    class="my-8"
+                />
 
                 <RouterLink to="/sign-up">
                     <Button variant="outline">
@@ -61,40 +83,39 @@
 </template>
 
 <script setup lang="ts">
-import { useForm } from 'vee-validate'
-import { toTypedSchema } from '@vee-validate/zod'
-import * as z from 'zod'
+    import { useForm } from 'vee-validate'
+    import { toTypedSchema } from '@vee-validate/zod'
+    import * as z from 'zod'
 
-import { Button } from '@/components/ui/button'
-import {
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { RouterLink } from 'vue-router'
-import Separator from '@/components/ui/separator/Separator.vue'
+    import { Button } from '@/components/ui/button'
+    import {
+        FormControl,
+        FormField,
+        FormItem,
+        FormLabel,
+        FormMessage,
+    } from '@/components/ui/form'
+    import {
+        Card,
+        CardContent,
+        CardDescription,
+        CardFooter,
+        CardHeader,
+        CardTitle,
+    } from '@/components/ui/card'
+    import { Input } from '@/components/ui/input'
+    import { RouterLink } from 'vue-router'
+    import Separator from '@/components/ui/separator/Separator.vue'
 
-const formSchema = toTypedSchema(z.object({
-  username: z.string().min(2).max(50),
-}))
+    const formSchema = toTypedSchema(z.object({
+        username: z.string().min(2).max(50),
+    }))
 
-const form = useForm({
-  validationSchema: formSchema,
-})
+    const form = useForm({
+        validationSchema: formSchema,
+    })
 
-const onSubmit = form.handleSubmit((values) => {
-  console.log('Form submitted!', values)
-})
+    const onSubmit = form.handleSubmit((values) => {
+        console.log('Form submitted!', values)
+    })
 </script>

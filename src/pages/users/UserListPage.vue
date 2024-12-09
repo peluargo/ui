@@ -1,5 +1,5 @@
 <template>
-    <PageHeader title="My Groups" />
+    <PageHeader title="Users" />
 </template>
 
 <script setup lang="ts">

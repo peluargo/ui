@@ -1,3 +1,3 @@
 <template>
-    <RouterView />
+    user profile
 </template>
