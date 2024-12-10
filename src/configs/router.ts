@@ -11,6 +11,7 @@ import SignUpPasswordCreationPage from '@/pages/sign-up/SignUpPasswordCreationPa
 import SignUpEmailConfirmationPage from '@/pages/sign-up/SignUpEmailConfirmationPage.vue'
 import UserProfilePage from '@/pages/users/UserProfilePage.vue'
 import UserListPage from '@/pages/users/UserListPage.vue'
+import DashboardPage from '@/pages/dashboard/DashboardPage.vue'
 
 const routes = [
     {
@@ -54,6 +55,17 @@ const routes = [
                 path: 'password-creation',
                 component: SignUpPasswordCreationPage
             }
+        ]
+    },
+    {
+        path: '/dashboard',
+        component: DefaultLayout,
+        children: [
+        {
+            name: 'dashboard',
+            path: '',
+            component: DashboardPage
+        }
         ]
     },
     {
