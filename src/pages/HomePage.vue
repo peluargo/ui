@@ -17,6 +17,14 @@
                 </CardContent>
             </RouterLink>
         </Card>
+        
+        <Card class="w-[200px]">
+            <RouterLink to="/kanban-board">
+                <CardContent>
+                    <p>Kanban</p>
+                </CardContent>
+            </RouterLink>
+        </Card>
     </div>
 </template>
 

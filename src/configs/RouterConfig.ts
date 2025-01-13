@@ -12,6 +12,7 @@ import SignUpEmailConfirmationPage from '@/pages/sign-up/SignUpEmailConfirmation
 import UserProfilePage from '@/pages/users/UserProfilePage.vue'
 import UserListPage from '@/pages/users/UserListPage.vue'
 import DashboardPage from '@/pages/dashboard/DashboardPage.vue'
+import KanbanBoardPage from '@/pages/kanban-board/KanbanBoardPage.vue'
 
 const routes = [
     {
@@ -55,6 +56,17 @@ const routes = [
                 path: 'password-creation',
                 component: SignUpPasswordCreationPage
             }
+        ]
+    },
+    {
+        path: '/kanban-board',
+        component: DefaultLayout,
+        children: [
+        {
+            name: 'kanban-board',
+            path: '',
+            component: KanbanBoardPage
+        }
         ]
     },
     {

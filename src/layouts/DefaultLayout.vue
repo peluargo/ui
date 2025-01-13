@@ -1,7 +1,7 @@
 <template>
     <NavigationBar />
 
-    <main class="container pt-32">
+    <main class="pt-32 h-screen">
         <RouterView />
     </main>
 </template>

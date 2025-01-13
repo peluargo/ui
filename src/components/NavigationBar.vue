@@ -1,6 +1,6 @@
 <template>
     <nav class="w-full h-20 fixed bg-indigo-400 dark:bg-transparent border-b">
-        <div class="container h-full flex flex-row items-center justify-between gap-4">
+        <div class="px-6 h-full flex flex-row items-center justify-between gap-4">
             <NavigationBarLogo />
 
             <div class="flex-grow" />
