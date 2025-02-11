@@ -10,14 +10,19 @@ import 'vuetify/styles'
 
 // Composables
 import { createVuetify } from 'vuetify'
-import { VBtn } from './components/v-btn'
+import { defaults, aliases } from './components'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
-export default createVuetify({
+const vuetify = createVuetify({
   theme: {
     defaultTheme: 'dark',
   },
-  defaults: {
-    VBtn,
-  },
+  
+  // Base Components
+  defaults,
+
+  // Custom Components
+  aliases,
 })
+
+export default vuetify
