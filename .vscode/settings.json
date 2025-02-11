@@ -1,0 +1,27 @@
+{
+    // Theme
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    // Formatting
+    "editor.formatOnSave": false,
+    "eslint.format.enable": true,
+    "eslint.useFlatConfig": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "files.autoSave": "off",
+    // Other preferences
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    // "[javascript]": {
+    //   "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    // },
+    // "[typescript]": {
+    //   "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    // },
+  }
