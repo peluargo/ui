@@ -7,6 +7,10 @@ export default {
           'label': 'Email',
           'placeholder': "amazing.user{'@'}email.com",
           'hint': 'Please enter YOUR email address 👀',
+          'validations': {
+            'must-be-filled': '@:validations.must-be-filled',
+            'must-be-available': 'This email is not available'
+          }
         }
       },
       'buttons': {
@@ -18,6 +22,9 @@ export default {
         }
       }
     }
+  },
+  'validations': {
+    'must-be-filled': 'This field is required'
   },
   'shared': {
     'theme': 'Theme',

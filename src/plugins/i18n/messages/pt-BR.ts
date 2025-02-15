@@ -7,6 +7,10 @@ export default {
           'label': 'Email',
           'placeholder': "usuario.incrivel{'@'}email.com",
           'hint': 'Preencha com o SEU endereço de email 👀',
+          'validations': {
+            'must-be-filled': '@:validations.must-be-filled',
+            'must-be-available': 'Este email não está disponível'
+          }
         }
       },
       'buttons': {
@@ -18,6 +22,9 @@ export default {
         }
       }
     }
+  },
+  'validations': {
+    'must-be-filled': 'Este campo é obrigatório'
   },
   'shared': {
     'theme': 'Tema',

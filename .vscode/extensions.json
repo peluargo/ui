@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "vscode-icons-team.vscode-icons",
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "dbaeumer.vscode-eslint",
+        "csstools.postcss",
+        "vue.volar"
+    ]
+}
