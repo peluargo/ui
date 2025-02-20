@@ -3,17 +3,18 @@
 
     <q-header reveal bordered class="bg-primary text-white" height-hint="98">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+        <q-btn dense flat round icon="sym_r_menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Title
+          {{ appName }}
         </q-toolbar-title>
 
-        <q-btn dense flat round icon="menu" @click="toggleTheme" />
-        <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+        <q-btn dense flat round :icon="darkThemeActive ? 'sym_r_light_mode' : 'sym_r_dark_mode'" @click="toggleDarkTheme" />
+        <q-btn dense flat round @click="toggleRightDrawer">
+          <q-avatar size="28px">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHGbsYum_F4FA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1732818959850?e=1745452800&v=beta&t=-A1vixffVGCQY5WioZu21DRR5EHnwagRNo2Oz98076c">
+          </q-avatar>
+        </q-btn>
       </q-toolbar>
 
       <q-tabs align="left">
@@ -42,6 +43,8 @@
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
 
+const appName = ref('Peluargo')
+
 const rightDrawerOpen = ref(false)
 function toggleRightDrawer () {
   rightDrawerOpen.value = !rightDrawerOpen.value
@@ -53,8 +56,8 @@ function toggleLeftDrawer () {
 }
 
 const $q = useQuasar()
-const darkThemeActive = ref(false)
-function toggleTheme () {
+const darkThemeActive = ref($q.dark.isActive)
+function toggleDarkTheme () {
   darkThemeActive.value = !darkThemeActive.value
   $q.dark.set(darkThemeActive.value)
 }
